@@ -1,0 +1,22 @@
+<h1>編集</h1>
+<%= form_for @post,{ action: :update } do |f| %>
+<p>
+<%= f.label :title %>
+<%= f.text_field :title %>
+</p>
+
+<p>
+<%= f.label :category %>
+<%= f.text_field :category %>
+
+</p>
+
+<p>
+<%= f.label :body %>
+<%= f.text_area :body %>
+</p>
+<button type="button" class="btn btn-default"><%= f.submit "更新" %></button>
+<!-- <%= f.submit "更新" %> -->
+<% end %>
+<button type="button" class="btn btn-default"><%=link_to "登録",new_post_path %></button>
+<!-- <%=link_to "登録", new_post_path %> -->

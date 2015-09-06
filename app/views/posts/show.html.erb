@@ -8,3 +8,8 @@
 記事本文：<%= @post.body %>
 </p>
 
+
+<button type="button" class="btn btn-default"><%=link_to "編集", edit_post_path %></button>
+<button type="button" class="btn btn-default"><%=link_to "削除", post_path, method: :delete %></button>
+
+

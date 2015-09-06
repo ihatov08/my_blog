@@ -2,6 +2,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    @author = Author.first
   end
 
   def show
@@ -16,6 +17,23 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.save
     redirect_to post_url(@post)
+  end
+
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    @post.update_attributes(post_params)
+    @post.save
+    redirect_to post_url(@post)
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to posts_url
   end
 
   private
